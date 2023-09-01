@@ -13,14 +13,14 @@
           End-to-end products to run <br />
           the core of your business
         </h1>
-        <p class="small-text text-center mt-3">
+        <p class="midum-text text-center mt-3">
           Tailored products designed for every aspect of your teams' needs.
         </p>
       </div>
       <div
         class="crads is-flex is-justify-content-center is-flex-wrap-wrap mt-4"
       >
-        <div v-for="items in cards" :key="items">
+        <div v-for="items in card" :key="items">
           <Card
             :img="items.img"
             :list="items.list"
@@ -61,6 +61,94 @@
         </div>
       </div>
     </section>
+    <section class="four">
+      <div class="columns">
+        <div class="column is-flex is-align-items-center is-two-fifths">
+          <img
+            src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/customer-support/support_globe.png"
+            alt=""
+          />
+        </div>
+        <div class="column content">
+          <h1 class="large-text">
+            Supporting your growth <br />
+            every step of the way
+          </h1>
+          <h2 class="small-text">
+            Our support superheroes are a click away to help you get the most
+            out of monday.com, so you can focus on working without limits
+          </h2>
+          <div class="icons">
+            <div class="columns">
+              <div class="column is-flex">
+                <img
+                  src="https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/customer-support/phone.png"
+                  alt=""
+                />
+                <div class="text">
+                  <h1>24/7</h1>
+                  <p class="small-text">support anytime, anywhere</p>
+                </div>
+              </div>
+              <div class="column is-flex">
+                <img
+                  src="https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/customer-support/heart.png"
+                  alt=""
+                />
+                <div class="text">
+                  <h1>Voted #1</h1>
+                  <p class="small-text">Most Loved by customers on G2</p>
+                </div>
+              </div>
+              <div class="column is-flex">
+                <img
+                  src="https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/customer-support/fast.png"
+                  alt=""
+                />
+                <div class="text">
+                  <h1>2 hour</h1>
+                  <p class="small-text">average response time</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="buttons is-flex">
+            <Button text="Get in Touch" />
+            <LearnButton text="Visit our spourt center" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="award">
+      <div class="stars">
+        <img
+          src="https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/review-cards/stars.png"
+          alt=""
+        />
+      </div>
+      <h1 class="midum-text margin-y-20 text-center">
+        An award-winning platform. Loved by customers.
+      </h1>
+      <p class="small-text text-center">Based on 10,000+ customer reviews.</p>
+      <div class="cards is-flex is-flex-wrap-wrap is-justify-content-center">
+        <div class="card-item" v-for="(i, index) in awardCardData" :key="index">
+          <Cards :award="true" :award_Card_data="i" />
+        </div>
+      </div>
+    </section>
+    <section class="last">
+      <div class="main">
+        <h1 class="large-text my-26 text-white">
+          Deliver your best work with monday.com
+        </h1>
+        <h3 class="text-center small-text" id="text-gray">
+          No credit card needed ✦ Unlimited time on Free plan
+        </h3>
+        <div class="award-buton text-center my-26">
+          <Button text="Get started " />
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 <script>
@@ -68,13 +156,14 @@ import Card from "./Card.vue";
 import Cards from "./Cards.vue";
 import LearnButton from "./LearnButton.vue";
 import Slider from "./Slider.vue";
+import Button from "./Button.vue";
 
 export default {
   name: "Midle-section",
-  components: { Card, Cards, LearnButton, Slider },
+  components: { Card, Cards, LearnButton, Button, Slider },
   data() {
     return {
-      cards: [
+      card: [
         {
           img: "https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/WM_new_logo/wm_main_logo_1.png",
           text1: "For professionals and teams managing tasks & workflows",
@@ -115,6 +204,26 @@ export default {
           ],
         },
       ],
+      awardCardData: [
+        {
+          image:
+            "https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/review-cards/trust.png",
+          title: "Voted best feature set, relationship and value",
+          subtitle: "“This is the best no-code platform I've ever seen.”",
+        },
+        {
+          image:
+            "https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/review-cards/capterra.png",
+          title: "Shortlisted in over 8 software categories",
+          subtitle: "“The perfect organizer and team builder.”",
+        },
+        {
+          image:
+            "https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/review-cards/g2.png",
+          title: "Market leader across 18 categories",
+          subtitle: '"Flexible product with near endless possibilities."',
+        },
+      ],
     };
   },
 };
@@ -140,6 +249,13 @@ export default {
   font-weight: 700;
   color: rgb(51, 51, 51);
 }
+.text-white {
+  color: rgb(255, 255, 255);
+}
+#text-gray {
+  color: rgb(254, 254, 254);
+  font-weight: 400;
+}
 .buton {
   margin-top: 30px;
 }
@@ -159,6 +275,13 @@ export default {
   font-size: 1.125rem;
   /* line-height: 32px; */
   color: rgb(51, 51, 51);
+  font-weight: 300;
+}
+.midum-text {
+  font-size: 1.75rem;
+  line-height: 40px;
+  font-weight: 400;
+  color: black;
 }
 .crads {
   padding-bottom: 100px;
@@ -175,5 +298,62 @@ export default {
 }
 .slider {
   padding: 0px 96px;
+}
+.four {
+  padding: 0px 60px;
+  .buttons {
+    gap: 0px 30px;
+    align-items: baseline;
+  }
+
+  .icons img {
+    max-height: 32px;
+  }
+  .icons {
+    display: flex;
+    margin: 50px 0px;
+    margin-bottom: 60px;
+  }
+  .text h1 {
+    font-size: 1.463rem;
+    line-height: 26px;
+    font-weight: 500;
+  }
+  .content {
+    padding: 0px 60px;
+    padding-right: 80px;
+  }
+}
+.award {
+  min-height: 100vh;
+  width: 100%;
+  margin: 20px 0px;
+  padding: 60px 0px;
+
+  .stars {
+    display: flex;
+    justify-content: center;
+  }
+  .margin-y-20 {
+    margin: 20px 0px;
+  }
+}
+.last {
+  min-height: 70vh;
+  width: 100%;
+  background-color: rgb(24, 27, 52);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .main h2 {
+    width: fit-content;
+  }
+  .main h2 {
+    align-items: center;
+  }
+  .my-26 {
+    margin: 26px 0px;
+  }
 }
 </style>

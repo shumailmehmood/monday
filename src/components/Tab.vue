@@ -17,7 +17,11 @@
         <h2 :class="[`${activetab === index ? 'blue' : 'gray'}`]">
           {{ items.name }}
         </h2>
-        <div :class="[`line ${activetab === index ? 'show' : ' none'} `]"></div>
+        <div
+          :class="[
+            `line width-desktop ${activetab === index ? 'show' : ' none'} `,
+          ]"
+        ></div>
       </div>
     </div>
   </div>

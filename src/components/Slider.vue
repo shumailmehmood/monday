@@ -4,37 +4,27 @@
       <div class="box">
         <div class="absolute">
           <div class="name-and-job-description">
-            <span class="quoteText"
-              >monday.com has given me the confidence because when I walk into
-              the room I know that when upper management asks for a certain
-              piece of information I’m able to quickly provide it for
-              them.”</span
-            >
+            <span class="quoteText">{{ quote }}</span>
           </div>
 
           <div class="quote name-and-job-description">
-            Kenny Wallace | Vendor Tooling Engineer, Nissan North America
+            {{ discription }}
           </div>
 
-          <img
-            src="https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/reviews/oscar_logo.svg"
-            alt=""
-          />
+          <img :src="text_image" alt="" />
         </div>
       </div>
       <div class="imgbox is-flex is-justify-content-flex-end">
         <div class="circles is-flex">
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
+          <div
+            :class="[`circle ${activeCircle === index ? 'blue' : ''} `]"
+            v-for="(i, index) in data"
+            :key="index"
+            @click="load(index, i)"
+          ></div>
         </div>
         <div class="img">
-          <img
-            src="https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/reviews/the_student_hotel_image.png"
-            alt=""
-          />
+          <img :src="figure" alt="" />
         </div>
       </div>
     </div>
@@ -43,6 +33,73 @@
 <script>
 export default {
   name: "Slider-vue",
+  data() {
+    return {
+      activeCircle: 0,
+      data: [
+        {
+          textimg:
+            "https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/reviews/oscar_logo.svg",
+          figure:
+            "https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/reviews/oscar_image.png",
+          qoute:
+            "“Now that we have monday.com Work OS as the backbone of our organization I feel that I have an overview I can trust.”",
+          discription: "Charlie MacGregor | Founder & CEO",
+        },
+        {
+          textimg:
+            "https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/reviews/telefonica_logo.svg",
+          figure:
+            "https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/reviews/the_student_hotel_image.png",
+          qoute:
+            "“With monday.com, we’re 30% more efficient at delivering hundreds of campaigns seen by millions of customers.”",
+          discription: "Tye Rapley-Hawkins | Head of Delivery",
+        },
+        {
+          textimg:
+            "https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/reviews/zippo.svg",
+          figure:
+            "https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/reviews/zippo_image.png",
+          qoute:
+            "“monday.com Work OS has enabled our group to launch more product categories and expand into more markets in way less time.”",
+          discription: "Chris Funk | Director of Product Innovation",
+        },
+        {
+          textimg: "",
+          figure:
+            "https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/reviews/nissan_image.png",
+          qoute:
+            "monday.com has given me the confidence because when I walk into the room I know that when upper management asks for a certain piece of information I’m able to quickly provide it for them.”",
+          discription:
+            "Kenny Wallace | Vendor Tooling Engineer, Nissan North America",
+        },
+      ],
+      text_image: "",
+      figure: "",
+      quote: "",
+      discription: "",
+    };
+  },
+  async created() {
+    await this.load(this.activeCircle);
+  },
+  methods: {
+    load(index) {
+      this.activeCircle = index;
+      let res = this.data.map((e, i) => {
+        if (this.activeCircle === i) {
+          return e;
+        } else {
+          return;
+        }
+      });
+      this.text_image = res[this.activeCircle].textimg;
+      this.figure = res[this.activeCircle].figure;
+      this.discription = res[this.activeCircle].discription;
+      this.quote = res[this.activeCircle].qoute;
+      console.log(index, "data is here", res);
+    },
+  },
 };
 </script>
 <style scoped>
@@ -63,7 +120,7 @@ export default {
 }
 .absolute {
   position: relative;
-  top: 0px;
+  top: 32px;
 }
 .circles {
   gap: 0px 10px;
@@ -78,6 +135,8 @@ export default {
 }
 .blue {
   background-color: rgb(97, 97, 255);
+  border: none;
+  transition: all 0.5s;
 }
 .circle:hover {
   scale: 1.5;

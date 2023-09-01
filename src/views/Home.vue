@@ -9,6 +9,9 @@
     <div class="midsection">
       <Midsection />
     </div>
+    <div class="footer">
+      <Footer />
+    </div>
   </main>
 </template>
 
@@ -17,6 +20,7 @@
 import Navbar from "@/components/Navbar.vue";
 import Hero from "@/components/Hero.vue";
 import Midsection from "@/components/Midsection.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "HomeView",
@@ -24,6 +28,7 @@ export default {
     Navbar,
     Hero,
     Midsection,
+    Footer,
   },
 };
 </script>
@@ -51,5 +56,12 @@ export default {
   position: relative;
   top: 72px;
   margin-top: 80px;
+}
+.footer {
+  width: 100%;
+  min-height: 100vh;
+  /* background-color: aqua; */
+  position: relative;
+  top: 72px;
 }
 </style>

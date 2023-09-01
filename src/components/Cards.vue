@@ -24,6 +24,19 @@
         </div>
       </div>
     </div>
+    <div v-else-if="award">
+      <div class="card award-card">
+        <div class="award-image">
+          <img :src="award_Card_data.image" alt="" />
+        </div>
+        <div class="award-centent">
+          <h1 class="title">{{ award_Card_data.title }}</h1>
+          <h2 class="subtitle">
+            {{ award_Card_data.subtitle }}
+          </h2>
+        </div>
+      </div>
+    </div>
     <div v-else>
       <div class="card is-flex is-flex-direction-column-reverse">
         <div class="image-main">
@@ -58,6 +71,8 @@ export default {
   name: "Cards-vue",
   props: {
     simple: Boolean,
+    award: Boolean,
+    award_Card_data: Object,
   },
   components: { Button },
 };
@@ -112,5 +127,43 @@ export default {
 }
 .percentage {
   gap: 0px 10px;
+}
+.award-card {
+  width: 286px;
+  z-index: 2;
+  margin: 32px 10px 0;
+  padding: 32px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0px 8px 24px 0 rgba(29, 140, 242, 0.16);
+  transition: filter 0.2s ease-in-out;
+  color: #333333;
+  position: relative;
+  .award-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .award-image img {
+    max-height: 100px;
+  }
+  .title {
+    font-size: 1.125rem;
+    line-height: 24px;
+    -webkit-letter-spacing: -0.5px;
+    -moz-letter-spacing: -0.5px;
+    -ms-letter-spacing: -0.5px;
+    letter-spacing: -0.5px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    min-height: 64px;
+    text-align: center;
+    margin-top: 13px;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 24px;
+  }
 }
 </style>
