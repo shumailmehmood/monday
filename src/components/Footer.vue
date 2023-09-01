@@ -18,3 +18,10 @@ export default {
   components: { Services, Faq },
 };
 </script>
+
+<style scoped>
+.faq {
+  width: 100%;
+  margin-top: 20px;
+}
+</style>

@@ -63,5 +63,6 @@ export default {
   /* background-color: aqua; */
   position: relative;
   top: 72px;
+  padding-bottom: 10px;
 }
 </style>

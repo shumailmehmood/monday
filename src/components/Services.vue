@@ -170,6 +170,8 @@ export default {
 .service-mian {
   padding: 0px 40px;
   padding-left: 20px;
+  padding-bottom: 57px;
+  border-bottom: 0.5px solid;
 }
 a {
   text-decoration: none;
