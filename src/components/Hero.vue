@@ -130,6 +130,8 @@
                 <div class="timeline-mian">
                   <div class="timeline shaddow">
                     <video
+                    autoplay
+                    muted
                       preload="auto"
                       poster="https://dapulse-res.cloudinary.com/image/fetch/f_auto,q_auto/https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/Masonry/final/Timeline_column.jpg"
                       playsinline=""
@@ -146,6 +148,8 @@
                 <div class="file-main">
                   <div class="files shaddow">
                     <video
+                    autoplay
+                    muted
                       preload="auto"
                       poster="https://dapulse-res.cloudinary.com/image/fetch/f_auto,q_auto/https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/Masonry/final/Status_column.jpg"
                       playsinline=""
@@ -181,6 +185,8 @@
             <div>
               <div class="img2mainleft shaddow email">
                 <video
+                autoplay
+                muted
                   preload="auto"
                   poster="https://dapulse-res.cloudinary.com/image/fetch/f_auto,q_auto/https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/Masonry/final/Integration.jpg"
                   playsinline=""
@@ -200,13 +206,15 @@
               >
                 <div class="pie-weight shaddow">
                   <video
+                     autoplay
+                     muted
                     preload="auto"
                     poster="https://dapulse-res.cloudinary.com/image/fetch/f_auto,q_auto/https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/Masonry/final/Pie.jpg"
                     playsinline=""
                     webkit-playsinline=""
                     x5-playsinline=""
                     style="width: 100%; height: 100%"
-                    autoplay=""
+                    
                   >
                     <source
                       src="https://dapulse-res.cloudinary.com/video/upload/q_auto,f_auto,cs_copy/Generator_featured images/Home Page - 2022 Rebrand/Masonry/final/Pie.mp4"
@@ -219,6 +227,8 @@
           <div class="column mobile-main is-mobile-three-fifths is-one-fifth">
             <div class="mobile shaddow">
               <video
+              autoplay
+              muted
                 preload="auto"
                 poster="https://dapulse-res.cloudinary.com/image/fetch/f_auto,q_auto/https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/Masonry/final/MobileApp.jpg"
                 playsinline=""
@@ -237,6 +247,8 @@
               <div class="column is-one-quarter plus-mian">
                 <div class="plus shaddow">
                   <video
+                  autoplay
+                  muted
                     preload="auto"
                     poster="https://dapulse-res.cloudinary.com/image/fetch/f_auto,q_auto/https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/Masonry/final/Automation.jpg"
                     playsinline=""
@@ -253,6 +265,8 @@
               <div class="column is-one-quarter profile-mian">
                 <div class="profile shaddow">
                   <video
+                  autoplay
+                  muted
                     preload="auto"
                     poster="https://dapulse-res.cloudinary.com/image/fetch/f_auto,q_auto/https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/Masonry/final/Talk.jpg"
                     playsinline=""
@@ -278,7 +292,9 @@
                   <div class="circle"></div>
                 </div>
                 <div class="pic">
-                  <video
+                  <video 
+                  autoplay
+                  muted
                     preload="auto"
                     poster="https://dapulse-res.cloudinary.com/image/fetch/f_auto,q_auto/https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/Masonry/final/Dash.jpg"
                     playsinline=""
