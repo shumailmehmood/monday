@@ -189,7 +189,7 @@ export default {
         start: "top top ", // Start animation when the trigger element is 80% from the top
         end: "bottom bottom", // End animation when the trigger element is 20% from the bottom
         scrub: 1,
-        markers: true,
+        // markers: true,
         // endTrigger: ".last",
         // Add debug markers (remove in production)
       },
